@@ -1,15 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
 
-import App from './components/app';
-import reducers from './reducers';
+import SearchBar from './components/search_bar.js';
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+const API_KEY = 'AIzaSyAfloA_6cKK0Yf6JgGkj8gx2kG0Z0sELk0';
+// create a new component 
+//const declares a final "variable" that is never going to be reassigned
+const App = () => {
+     return (
+          <div>
+               <SearchBar />
+          </div>
+     );
+}
 
-ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
-  </Provider>
-  , document.querySelector('.container'));
+
+// Render the component into the DOM
+ReactDOM.render(<App />, document.querySelector('.container'));
