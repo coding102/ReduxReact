@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
 import SearchBar from './components/search_bar.js';
-
 import VideoList from './components/video_list';
+import VideoDetail from './components/video_detail';
 // class based components are used when components need to be aware of state
 // function based components are used when taking in info and producing jsx
 const API_KEY = 'AIzaSyAfloA_6cKK0Yf6JgGkj8gx2kG0Z0sELk0';
@@ -26,6 +26,7 @@ class App extends Component {
         return (
             <div>
                 <SearchBar />
+                <VideoDetail video={this.state.videos[0]} />
                 <VideoList videos={this.state.videos} />
             </div>
         );
